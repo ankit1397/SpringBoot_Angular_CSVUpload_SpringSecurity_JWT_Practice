@@ -1,0 +1,3 @@
+https://github.com/bezkoder/angular-11-spring-boot-jwt-authentication
+
+https://bezkoder.com/angular-11-spring-boot-jwt-auth/

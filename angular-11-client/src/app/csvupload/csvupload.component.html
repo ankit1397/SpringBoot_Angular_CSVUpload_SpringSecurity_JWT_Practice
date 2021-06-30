@@ -1,0 +1,29 @@
+<div *ngIf="isLoggedIn; else loggedOut">
+    <h1>CSV READ AND UPLOAD TO DB</h1>
+    <div class="csv-file-chooser-section">
+        <input type="file" #fileImportInput id="csvFileUpload" name="File Upload" (change)="fileChangeListener($event)"
+            accept=".csv" />
+    </div>
+    <div class="text-center">
+        <button (click)="uploadToDB()">UploadToDB</button>
+    </div>
+
+    <div class="csv-result-table">
+
+        <table>
+            <thead>
+                <th *ngFor="let col of colNames;">{{col}}</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of csvRecords;">
+                    <td *ngFor="let col of row;"><span>{{col}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<ng-template #loggedOut>
+    Please login.
+</ng-template>
